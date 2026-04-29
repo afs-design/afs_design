@@ -1,0 +1,11 @@
+st d=u(c);fetch(c.href,d)
+))},le.prefetchDNS=functi
+=typeof p.fetchPriority==
+string"?p.fetchPriority:v
+tegrity:b,fetchPriority:R
+tegrity:b,fetchPriority:R
+pe:void 0,fetchPriority:t
+ypeof p.fetchPriority==
+string"?p.fetchPriority:v
+m("dns-prefetch",t,null)}
+ry{(await fetch("/api/con

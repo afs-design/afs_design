@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Mockup Component</title>
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --text-main: #ffffff;
+      --text-sub: #a1a1aa;
+      --overlay-bg: rgba(0, 0, 0, 0.92);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Card View */
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      padding: 20px;
+    }
+    .card-container:hover {
+      transform: translateY(-5px);
+    }
+
+    /* iPhone Mockup (CSS Only) */
+    .iphone-mockup {
+      position: relative;
+      width: 300px;
+      height: 600px;
+      border-radius: 48px;
+      border: 12px solid #1f1f1f;
+      background-color: #000;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Notch */
+    .notch {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 28px;
+      background-color: #1f1f1f;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+      z-index: 10;
+    }
+
+    /* Screen Content */
+    .screen {
+      width: 100%;
+      height: 100%;
+      background-color: #111;
+      overflow: hidden;
+    }
+    .screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Text Info */
+    .info {
+      text-align: center;
+    }
+    .info .title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+    }
+    .info .subtitle {
+      font-size: 0.875rem;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    /* Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--overlay-bg);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease-out;
+    }
+    .overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Overlay Content Animation */
+    .overlay-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transform: scale(0.8);
+      transition: transform 0.35s ease-out;
+    }
+    .overlay.active .overlay-content {
+      transform: scale(1);
+    }
+
+    /* Header */
+    .overlay-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%);
+      z-index: 1010;
+      pointer-events: none; /* Let clicks pass through except for buttons */
+    }
+    .overlay-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .close-btn {
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: white;
+      font-size: 32px;
+      cursor: pointer;
+      pointer-events: auto;
+      padding: 8px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      transition: background-color 0.2s;
+    }
+    .close-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Scrollable Area */
+    .scroll-area {
+      flex: 1;
+      width: 100%;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 64px; /* Space for header */
+      
+      /* Hide scrollbar */
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+    .scroll-area::-webkit-scrollbar {
+      display: none; /* Chrome, Safari and Opera */
+    }
+
+    /* Image Strip */
+    .image-strip {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      background-color: #000;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    .image-strip img {
+      width: 100%;
+      display: block;
+      margin: 0; /* No gap between images */
+      padding: 0;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .iphone-mockup {
+        width: 260px;
+        height: 520px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Card View -->
+  <div class="card-container" id="mockupCard">
+    <div class="iphone-mockup">
+      <div class="notch"></div>
+      <div class="screen">
+        <img src="./file/page_1.png" alt="푸드 상세페이지 커버" onerror="this.src='https://picsum.photos/seed/food1/400/800'; this.onerror=null;">
+      </div>
+    </div>
+    <div class="info">
+      <h3 class="title">푸드 상세페이지</h3>
+      <p class="subtitle">상세페이지 기획 + 디자인</p>
+    </div>
+  </div>
+
+  <!-- Fullscreen Overlay -->
+  <div class="overlay" id="overlay">
+    <div class="overlay-content">
+      <div class="overlay-header">
+        <div class="overlay-title">푸드 상세페이지</div>
+        <button class="close-btn" id="closeBtn" aria-label="닫기">&times;</button>
+      </div>
+      <div class="scroll-area" id="scrollArea">
+        <div class="image-strip" id="imageStrip">
+          <!-- Images will be injected here by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mockupCard = document.getElementById('mockupCard');
+      const overlay = document.getElementById('overlay');
+      const closeBtn = document.getElementById('closeBtn');
+      const imageStrip = document.getElementById('imageStrip');
+      const scrollArea = document.getElementById('scrollArea');
+
+      // Generate image list dynamically (Strictly sequential page_1.png to page_28.png, except page_2 is .gif)
+      const totalPages = 28;
+      let imagesHtml = '';
+      
+      for (let i = 1; i <= totalPages; i++) {
+        const ext = i === 2 ? 'gif' : 'png';
+        imagesHtml += `
+          <img 
+            src="./file/page_${i}.${ext}" 
+            alt="상세페이지 이미지 ${i}" 
+            loading="lazy"
+            onerror="this.src='https://picsum.photos/seed/detail${i}/480/800'; this.onerror=null;"
+          >
+        `;
+      }
+      
+      imageStrip.innerHTML = imagesHtml;
+
+      // Open overlay
+      mockupCard.addEventListener('click', () => {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      });
+
+      // Close overlay function
+      const closeOverlay = () => {
+        overlay.classList.remove('active');
+        document.body.style.overflow = ''; // Restore background scrolling
+        
+        // Reset scroll position after animation completes
+        setTimeout(() => {
+          scrollArea.scrollTop = 0;
+        }, 350);
+      };
+
+      // Close on X button click
+      closeBtn.addEventListener('click', closeOverlay);
+
+      // Close on background click (clicking outside the image strip)
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay || e.target === scrollArea) {
+          closeOverlay();
+        }
+      });
+      
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) {
+          closeOverlay();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
