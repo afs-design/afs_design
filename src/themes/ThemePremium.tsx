@@ -59,11 +59,11 @@ const projects = [
       '/digital/digital_02.png',
       '/digital/digital_03.png',
       '/digital/digital_04.gif',
-      '/digital/digital_5.png',
-      '/digital/digital_6.png',
-      '/digital/digital_7.png',
-      '/digital/digital_8.png',
-      '/digital/digital_9.png',
+      '/digital/digital_05.png',
+      '/digital/digital_06.png',
+      '/digital/digital_07.png',
+      '/digital/digital_08.png',
+      '/digital/digital_09.png',
       '/digital/digital_10.png',
       '/digital/digital_11.png',
       '/digital/digital_12.png',
@@ -83,9 +83,9 @@ const projects = [
     id: 3,
     title: '리빙 상세페이지',
     category: '상세페이지 기획 + 디자인',
-    coverImage: '/living/living_2.png',
+    coverImage: '/living/living_1.png',
     details: [
-      '/living/living_1.png',
+      '/living/living_2.png',
       '/living/living_3.png',
       '/living/living_4.png',
       '/living/living_5.gif',
@@ -1784,59 +1784,26 @@ export default function ThemePremium() {
                 <div className="sticky top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-30 mx-auto mb-[-24px]"></div>
 
                 {/* Cover Image */}
-                {selectedProject.id !== 3 && (
-                  <img 
-                    src={selectedProject.coverImage} 
-                    alt={`${selectedProject.title} cover`}
-                    className={`w-full max-w-full h-auto object-cover block m-0 p-0 ${selectedProject.id === 1 ? 'pt-8 bg-white' : ''}`}
-                    loading="eager"
-                    referrerPolicy="no-referrer"
-                  />
-                )}
+                <img 
+                  src={selectedProject.coverImage} 
+                  alt={`${selectedProject.title} cover`}
+                  className={`w-full max-w-full h-auto object-cover block m-0 p-0 ${selectedProject.id === 1 ? 'pt-8 bg-white' : ''}`}
+                  loading="eager"
+                  referrerPolicy="no-referrer"
+                />
 
-                {/* Detail Images - For Project 3 we explicitly force living_1 down to living_26 order since we used living_2 as cover */}
+                {/* Detail Images */}
                 <div className="flex flex-col w-full">
-                  {selectedProject.id === 3 ? (
-                    <>
-                      <img src="/living/living_1.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_2.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_3.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_4.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_5.gif" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_6.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_7.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_8.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_9.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_10.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_11.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_12.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_13.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_14.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_15.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_16.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_17.gif" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_18.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_19.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_20.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_21.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_22.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_23.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_24.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_25.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                      <img src="/living/living_26.png" alt="" className="w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent" loading="eager" referrerPolicy="no-referrer" />
-                    </>
-                  ) : (
-                    selectedProject.details.map((imgSrc, idx) => (
-                      <img 
-                        key={idx}
-                        src={imgSrc} 
-                        alt=""
-                        className={`w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent ${selectedProject.id === 1 ? 'min-h-[50px] bg-white' : ''}`}
-                        loading="eager"
-                        referrerPolicy="no-referrer"
-                      />
-                    ))
-                  )}
+                  {selectedProject.details.map((imgSrc, idx) => (
+                    <img 
+                      key={idx}
+                      src={imgSrc} 
+                      alt=""
+                      className={`w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent ${selectedProject.id === 1 ? 'min-h-[50px] bg-white' : ''}`}
+                      loading="eager"
+                      referrerPolicy="no-referrer"
+                    />
+                  ))}
                 </div>
 
               </motion.div>
