@@ -1790,7 +1790,7 @@ export default function ThemePremium() {
               layoutId={`phone-frame-${selectedProject.id}`}
               className={
                 selectedProject.id === 3
-                  ? "w-full max-w-[400px] md:h-[90vh] rounded-[3rem] border-[8px] border-zinc-800 bg-black p-2 shadow-2xl flex flex-col max-md:fixed max-md:top-1/2 max-md:left-1/2 max-md:-translate-x-1/2 max-md:-translate-y-1/2 max-md:w-[90vw] max-md:max-h-[85vh] max-md:overflow-hidden md:relative md:!transform-none md:!top-auto md:!left-auto"
+                  ? "relative w-full max-w-[400px] h-[85vh] md:h-[90vh] rounded-[3rem] border-[8px] border-zinc-800 bg-black p-2 shadow-2xl flex flex-col"
                   : "relative w-full max-w-[400px] h-[85vh] md:h-[90vh] rounded-[3rem] border-[8px] border-zinc-800 bg-black p-2 shadow-2xl flex flex-col"
               }
             >
@@ -1799,7 +1799,7 @@ export default function ThemePremium() {
                 layoutId={`phone-screen-${selectedProject.id}`} 
                 className={
                   selectedProject.id === 3
-                    ? "w-full overflow-x-hidden phone-scroll bg-white rounded-[2.5rem] relative md:flex md:flex-col md:h-full md:overflow-y-auto max-md:block max-md:max-h-[80vh] max-md:overflow-y-scroll"
+                    ? "w-full overflow-x-hidden phone-scroll bg-white rounded-[2.5rem] relative flex flex-col h-full overflow-y-auto"
                     : "w-full overflow-x-hidden phone-scroll bg-zinc-950 rounded-[2.5rem] relative flex flex-col h-full overflow-y-auto"
                 }
                 style={{ WebkitOverflowScrolling: 'touch', scrollBehavior: 'smooth', touchAction: 'pan-y' }}
@@ -1822,7 +1822,7 @@ export default function ThemePremium() {
                 )}
 
                 {/* Detail Images */}
-                <div className={selectedProject.id === 3 ? "w-full max-md:block md:flex md:flex-col" : "w-full flex flex-col"}>
+                <div className={w-full flex flex-col"}>
                   {selectedProject.details.map((imgSrc, idx) => {
                     // Start rendering from the first detail image (which we skip if it's the cover image and idx === 0)
                     if (idx === 0 && imgSrc === selectedProject.coverImage) return null;
