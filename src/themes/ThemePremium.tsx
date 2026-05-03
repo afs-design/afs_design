@@ -237,7 +237,7 @@ export default function ThemePremium() {
       </div>
 
       {/* Header */}
-      <header className="fixed top-0 w-full z-40 glass-nav">
+      <header className="fixed top-0 w-full z-50 glass-nav">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
             <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600"></div>
@@ -1208,7 +1208,7 @@ export default function ThemePremium() {
                     </div>
 
                     {/* Dynamic Island / Notch Hint */}
-                    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[32%] h-7 bg-black rounded-full z-40 shadow-[0_2px_4px_rgba(0,0,0,0.5)] shadow-[0_2px_4px_rgba(0,0,0,0.5)] shadow-[0_2px_4px_rgba(0,0,0,0.5)]"></div>
+                    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[32%] h-7 bg-black rounded-full z-50 shadow-[0_2px_4px_rgba(0,0,0,0.5)] shadow-[0_2px_4px_rgba(0,0,0,0.5)] shadow-[0_2px_4px_rgba(0,0,0,0.5)]"></div>
                     
                     {/* Foreground image (Fullscreen, no pt-10) */}
                     <div className="relative z-10 w-full h-full">
