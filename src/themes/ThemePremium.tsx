@@ -1769,22 +1769,7 @@ export default function ThemePremium() {
               <X size={24} />
             </button>
 
-            {/* Download Buttons */}
-            <div className="absolute top-6 left-6 z-[110] flex flex-col gap-3">
-              {selectedProject.id === 1 && (
-                <a href="/file.zip" download className="flex items-center gap-2 px-4 py-3 bg-indigo-600/90 hover:bg-indigo-500 rounded-full text-white text-sm font-semibold transition-all shadow-lg backdrop-blur-sm">
-                  <Download size={18} />
-                  푸드 원본 전체 다운로드 (.zip)
-                </a>
-              )}
-              {selectedProject.id === 2 && (
-                <a href="/digital.zip" download className="flex items-center gap-2 px-4 py-3 bg-indigo-600/90 hover:bg-indigo-500 rounded-full text-white text-sm font-semibold transition-all shadow-lg backdrop-blur-sm">
-                  <Download size={18} />
-                  디지털 기기 원본 전체 다운로드 (.zip)
-                </a>
-              )}
-            </div>
-
+            
             {/* The Sleek Phone Mockup Modal */}
             <motion.div
               layoutId={`phone-frame-${selectedProject.id}`}
