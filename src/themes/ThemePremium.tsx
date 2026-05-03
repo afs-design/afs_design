@@ -1791,7 +1791,7 @@ export default function ThemePremium() {
               >
                 
                 {/* Dynamic Island / Notch Hint (Modal) */}
-                <div className="sticky top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-zinc-800 rounded-full z-[999] z-30 mx-auto mb-[-24px]"></div>
+                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-zinc-800 rounded-full z-[999] z-30 mx-auto mb-[-24px]"></div>
 
                 {/* Cover Image Wrapper */}
                 {selectedProject.id !== 3 && (
@@ -1866,7 +1866,7 @@ export default function ThemePremium() {
               >
                 
                 {/* Dynamic Island / Notch Hint (Modal) */}
-                <div className="sticky top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-zinc-800 rounded-full z-[999] z-30 mx-auto mb-[-24px]"></div>
+                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-zinc-800 rounded-full z-[999] z-30 mx-auto mb-[-24px]"></div>
 
                 {/* Header inside phone */}
                 <div className="pt-16 pb-8 px-8 text-center bg-gradient-to-b from-zinc-900 to-zinc-950 border-b border-white/5">
