@@ -502,7 +502,7 @@ export default function ThemePremium() {
                   className="relative w-[300px] h-[600px] rounded-[3rem] border-[8px] border-zinc-800 bg-black p-2 shadow-2xl group-hover:border-zinc-700 transition-colors duration-500"
                 >
                   <motion.div layoutId={`detail-phone-screen-${item.id}`} className="relative w-full h-full rounded-[2.5rem] overflow-hidden bg-zinc-900">
-                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-zinc-800 rounded-full z-30"></div>
+                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-zinc-800 rounded-full z-[999] z-30"></div>
                     
                     <img 
                       src={item.image} 
@@ -1033,7 +1033,7 @@ export default function ThemePremium() {
                   className="relative w-[300px] h-[600px] rounded-[3rem] border-[8px] border-zinc-800 bg-black p-2 shadow-2xl group-hover:border-zinc-700 transition-colors duration-500"
                 >
                   <motion.div layoutId={`detail-phone-screen-${item.id}`} className="relative w-full h-full rounded-[2.5rem] overflow-hidden bg-zinc-900">
-                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-zinc-800 rounded-full z-30"></div>
+                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-zinc-800 rounded-full z-[999] z-30"></div>
                     
                     <img 
                       src={item.image} 
@@ -1109,7 +1109,7 @@ export default function ThemePremium() {
                   className="relative w-[300px] h-[600px] rounded-[3rem] border-[8px] border-zinc-800 bg-black p-2 shadow-2xl group-hover:border-zinc-700 transition-colors duration-500"
                 >
                   <motion.div layoutId={`phone-screen-${project.id}`} className="relative w-full h-full rounded-[2.5rem] overflow-hidden bg-zinc-900">
-                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-zinc-800 rounded-full z-30"></div>
+                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-zinc-800 rounded-full z-[999] z-30"></div>
                     
                     <img 
                       src={project.coverImage} 
@@ -1791,7 +1791,7 @@ export default function ThemePremium() {
               >
                 
                 {/* Dynamic Island / Notch Hint (Modal) */}
-                <div className="sticky top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-zinc-800 rounded-full z-30 mx-auto mb-[-24px]"></div>
+                <div className="sticky top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-zinc-800 rounded-full z-[999] z-30 mx-auto mb-[-24px]"></div>
 
                 {/* Cover Image Wrapper */}
                 {selectedProject.id !== 3 && (
@@ -1866,7 +1866,7 @@ export default function ThemePremium() {
               >
                 
                 {/* Dynamic Island / Notch Hint (Modal) */}
-                <div className="sticky top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-zinc-800 rounded-full z-30 mx-auto mb-[-24px]"></div>
+                <div className="sticky top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-zinc-800 rounded-full z-[999] z-30 mx-auto mb-[-24px]"></div>
 
                 {/* Header inside phone */}
                 <div className="pt-16 pb-8 px-8 text-center bg-gradient-to-b from-zinc-900 to-zinc-950 border-b border-white/5">
