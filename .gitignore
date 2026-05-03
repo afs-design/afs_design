@@ -7,9 +7,4 @@ coverage/
 .env*
 !.env.example
 
-# Exclude large static assets that are already in GitHub
-public/digital/
-public/living/
-public/food/
-public/file/
-public/*.zip
+
