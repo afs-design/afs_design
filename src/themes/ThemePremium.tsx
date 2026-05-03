@@ -1788,20 +1788,20 @@ export default function ThemePremium() {
             {/* The Sleek Phone Mockup Modal */}
             <motion.div
               layoutId={`phone-frame-${selectedProject.id}`}
-              className={`w-full max-w-[400px] md:h-[90vh] rounded-[3rem] border-[8px] border-zinc-800 bg-black p-2 shadow-2xl flex flex-col md:relative ${
-                selectedProject.id === 3 
-                  ? 'max-md:fixed max-md:top-1/2 max-md:left-1/2 max-md:-translate-x-1/2 max-md:-translate-y-1/2 max-md:w-[90vw] max-md:max-h-[85vh] max-md:overflow-hidden' 
-                  : 'max-md:relative max-md:h-[85vh]'
-              }`}
+              className={
+                selectedProject.id === 3
+                  ? "w-full max-w-[400px] md:h-[90vh] rounded-[3rem] border-[8px] border-zinc-800 bg-black p-2 shadow-2xl flex flex-col max-md:fixed max-md:top-1/2 max-md:left-1/2 max-md:-translate-x-1/2 max-md:-translate-y-1/2 max-md:w-[90vw] max-md:max-h-[85vh] max-md:overflow-hidden md:relative md:!transform-none md:!top-auto md:!left-auto"
+                  : "relative w-full max-w-[400px] h-[85vh] md:h-[90vh] rounded-[3rem] border-[8px] border-zinc-800 bg-black p-2 shadow-2xl flex flex-col"
+              }
             >
               {/* Scrollable Screen Inside Phone */}
               <motion.div 
                 layoutId={`phone-screen-${selectedProject.id}`} 
-                className={`w-full overflow-x-hidden phone-scroll ${
+                className={
                   selectedProject.id === 3
-                    ? 'bg-white max-md:block max-md:max-h-[80vh] max-md:overflow-y-scroll'
-                    : 'bg-zinc-950 max-md:flex max-md:flex-col max-md:h-full max-md:overflow-y-auto'
-                } rounded-[2.5rem] relative md:flex md:flex-col md:h-full md:overflow-y-auto`}
+                    ? "w-full overflow-x-hidden phone-scroll bg-white rounded-[2.5rem] relative md:flex md:flex-col md:h-full md:overflow-y-auto max-md:block max-md:max-h-[80vh] max-md:overflow-y-scroll"
+                    : "w-full overflow-x-hidden phone-scroll bg-zinc-950 rounded-[2.5rem] relative flex flex-col h-full overflow-y-auto"
+                }
                 style={{ WebkitOverflowScrolling: 'touch', scrollBehavior: 'smooth', touchAction: 'pan-y' }}
               >
                 
@@ -1822,7 +1822,7 @@ export default function ThemePremium() {
                 )}
 
                 {/* Detail Images */}
-                <div className={`w-full ${selectedProject.id === 3 ? 'max-md:block' : 'flex flex-col'}`}>
+                <div className={selectedProject.id === 3 ? "w-full max-md:block md:flex md:flex-col" : "w-full flex flex-col"}>
                   {selectedProject.details.map((imgSrc, idx) => {
                     // Start rendering from the first detail image (which we skip if it's the cover image and idx === 0)
                     if (idx === 0 && imgSrc === selectedProject.coverImage) return null;
@@ -1831,7 +1831,11 @@ export default function ThemePremium() {
                         key={idx}
                         src={imgSrc} 
                         alt=""
-                        className={`w-full max-w-full h-auto block m-0 p-0 text-transparent bg-transparent ${selectedProject.id === 1 ? 'min-h-[50px] bg-white' : ''} ${selectedProject.id === 3 ? 'object-cover shrink-0' : 'object-cover'}`}
+                        className={
+                          selectedProject.id === 3
+                            ? "w-full max-w-full block m-0 p-0 object-cover shrink-0 h-auto"
+                            : `w-full max-w-full block m-0 p-0 text-transparent bg-transparent object-cover h-auto ${selectedProject.id === 1 ? 'min-h-[50px] bg-white' : ''}`
+                        }
                         loading="eager"
                         referrerPolicy="no-referrer"
                       />
