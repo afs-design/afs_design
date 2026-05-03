@@ -1,6 +1,7 @@
 import express from 'express';
 import { createServer as createViteServer } from 'vite';
 import Database from 'better-sqlite3';
+import path from 'path';
 
 const db = new Database('database.sqlite');
 db.exec(`
@@ -33,6 +34,24 @@ async function startServer() {
       res.status(500).json({ success: false, error: 'Failed to save contact' });
     }
   });
+
+  const publicDir = path.resolve(process.cwd(), 'public');
+  
+  const streamZip = (filename: string, req: express.Request, res: express.Response) => {
+    const fs = require('fs');
+    const filePath = path.join(publicDir, filename);
+    if (!fs.existsSync(filePath)) return res.status(404).end();
+    const stat = fs.statSync(filePath);
+    res.setHeader('Content-Type', 'application/zip');
+    res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+    res.setHeader('Content-Length', stat.size);
+    const stream = fs.createReadStream(filePath);
+    stream.pipe(res);
+  };
+
+  app.get('/digital.zip', (req, res) => streamZip('digital.zip', req, res));
+  app.get('/file.zip', (req, res) => streamZip('file.zip', req, res));
+  app.get('/living.zip', (req, res) => streamZip('living.zip', req, res));
 
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({

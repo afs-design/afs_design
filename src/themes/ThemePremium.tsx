@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
-import { MessageCircle, ArrowRight, X, Zap, TrendingUp, Target, Layout, Star, ChevronRight, Mail } from 'lucide-react';
+import { MessageCircle, ArrowRight, X, Zap, TrendingUp, Target, Layout, Star, ChevronRight, Mail, Download } from 'lucide-react';
 import ParticleBackground from '../components/ParticleBackground';
 
 /* BACKUP: 포트폴리오 캡션 원본 시작
@@ -83,8 +83,9 @@ const projects = [
     id: 3,
     title: '리빙 상세페이지',
     category: '상세페이지 기획 + 디자인',
-    coverImage: '/living/living_1.png',
+    coverImage: '/living/living_2.png',
     details: [
+      '/living/living_1.png',
       '/living/living_2.png',
       '/living/living_3.png',
       '/living/living_4.png',
@@ -1768,42 +1769,74 @@ export default function ThemePremium() {
               <X size={24} />
             </button>
 
+            {/* Download Buttons */}
+            <div className="absolute top-6 left-6 z-[110] flex flex-col gap-3">
+              {selectedProject.id === 1 && (
+                <a href="/file.zip" download className="flex items-center gap-2 px-4 py-3 bg-indigo-600/90 hover:bg-indigo-500 rounded-full text-white text-sm font-semibold transition-all shadow-lg backdrop-blur-sm">
+                  <Download size={18} />
+                  푸드 원본 전체 다운로드 (.zip)
+                </a>
+              )}
+              {selectedProject.id === 2 && (
+                <a href="/digital.zip" download className="flex items-center gap-2 px-4 py-3 bg-indigo-600/90 hover:bg-indigo-500 rounded-full text-white text-sm font-semibold transition-all shadow-lg backdrop-blur-sm">
+                  <Download size={18} />
+                  디지털 기기 원본 전체 다운로드 (.zip)
+                </a>
+              )}
+            </div>
+
             {/* The Sleek Phone Mockup Modal */}
             <motion.div
               layoutId={`phone-frame-${selectedProject.id}`}
-              className="relative w-full max-w-[400px] h-[85vh] md:h-[90vh] rounded-[3rem] border-[8px] border-zinc-800 bg-black p-2 shadow-2xl flex flex-col"
+              className={`w-full max-w-[400px] md:h-[90vh] rounded-[3rem] border-[8px] border-zinc-800 bg-black p-2 shadow-2xl flex flex-col md:relative ${
+                selectedProject.id === 3 
+                  ? 'max-md:fixed max-md:top-1/2 max-md:left-1/2 max-md:-translate-x-1/2 max-md:-translate-y-1/2 max-md:w-[90vw] max-md:max-h-[85vh] max-md:overflow-hidden' 
+                  : 'max-md:relative max-md:h-[85vh]'
+              }`}
             >
               {/* Scrollable Screen Inside Phone */}
               <motion.div 
                 layoutId={`phone-screen-${selectedProject.id}`} 
-                className="w-full h-full overflow-y-auto overflow-x-hidden phone-scroll bg-zinc-950 rounded-[2.5rem] relative block"
+                className={`w-full overflow-x-hidden phone-scroll ${
+                  selectedProject.id === 3
+                    ? 'bg-white max-md:block max-md:max-h-[80vh] max-md:overflow-y-scroll'
+                    : 'bg-zinc-950 max-md:flex max-md:flex-col max-md:h-full max-md:overflow-y-auto'
+                } rounded-[2.5rem] relative md:flex md:flex-col md:h-full md:overflow-y-auto`}
                 style={{ WebkitOverflowScrolling: 'touch', scrollBehavior: 'smooth', touchAction: 'pan-y' }}
               >
                 
                 {/* Dynamic Island / Notch Hint (Modal) */}
                 <div className="sticky top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-30 mx-auto mb-[-24px]"></div>
 
-                {/* Cover Image */}
-                <img 
-                  src={selectedProject.coverImage} 
-                  alt={`${selectedProject.title} cover`}
-                  className={`w-full max-w-full h-auto object-cover block m-0 p-0 ${selectedProject.id === 1 ? 'pt-8 bg-white' : ''}`}
-                  loading="eager"
-                  referrerPolicy="no-referrer"
-                />
-
-                {/* Detail Images */}
-                <div className="flex flex-col w-full">
-                  {selectedProject.details.map((imgSrc, idx) => (
+                {/* Cover Image Wrapper */}
+                {selectedProject.id !== 3 && (
+                  <div className="w-full">
                     <img 
-                      key={idx}
-                      src={imgSrc} 
-                      alt=""
-                      className={`w-full max-w-full h-auto object-cover block m-0 p-0 text-transparent bg-transparent ${selectedProject.id === 1 ? 'min-h-[50px] bg-white' : ''}`}
+                      src={selectedProject.coverImage} 
+                      alt={`${selectedProject.title} cover`}
+                      className={`w-full max-w-full block m-0 p-0 h-auto ${selectedProject.id === 1 ? 'pt-8 bg-white' : ''} object-cover`}
                       loading="eager"
                       referrerPolicy="no-referrer"
                     />
-                  ))}
+                  </div>
+                )}
+
+                {/* Detail Images */}
+                <div className={`w-full ${selectedProject.id === 3 ? 'max-md:block' : 'flex flex-col'}`}>
+                  {selectedProject.details.map((imgSrc, idx) => {
+                    // Start rendering from the first detail image (which we skip if it's the cover image and idx === 0)
+                    if (idx === 0 && imgSrc === selectedProject.coverImage) return null;
+                    return (
+                      <img 
+                        key={idx}
+                        src={imgSrc} 
+                        alt=""
+                        className={`w-full max-w-full h-auto block m-0 p-0 text-transparent bg-transparent ${selectedProject.id === 1 ? 'min-h-[50px] bg-white' : ''} ${selectedProject.id === 3 ? 'object-cover shrink-0' : 'object-cover'}`}
+                        loading="eager"
+                        referrerPolicy="no-referrer"
+                      />
+                    );
+                  })}
                 </div>
 
               </motion.div>
