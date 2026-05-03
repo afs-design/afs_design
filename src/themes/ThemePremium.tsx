@@ -1822,7 +1822,7 @@ export default function ThemePremium() {
                 )}
 
                 {/* Detail Images */}
-                <div className={w-full flex flex-col"}>
+                <div className="w-full flex flex-col">
                   {selectedProject.details.map((imgSrc, idx) => {
                     // Start rendering from the first detail image (which we skip if it's the cover image and idx === 0)
                     if (idx === 0 && imgSrc === selectedProject.coverImage) return null;
