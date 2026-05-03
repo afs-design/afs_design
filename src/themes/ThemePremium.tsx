@@ -1800,7 +1800,7 @@ export default function ThemePremium() {
                       src={selectedProject.coverImage} 
                       alt={`${selectedProject.title} cover`}
                       className={`w-full max-w-full block m-0 p-0 h-auto ${selectedProject.id === 1 ? 'pt-8 bg-white' : ''} object-cover`}
-                      loading="eager"
+                      loading="lazy"
                       referrerPolicy="no-referrer"
                     />
                   </div>
@@ -1821,7 +1821,7 @@ export default function ThemePremium() {
                             ? "w-full max-w-full block m-0 p-0 object-cover h-auto"
                             : `w-full max-w-full block m-0 p-0 text-transparent bg-transparent object-cover h-auto ${selectedProject.id === 1 ? 'min-h-[50px] bg-white' : ''}`
                         }
-                        loading="eager"
+                        loading="lazy"
                         referrerPolicy="no-referrer"
                       />
                     );
@@ -1881,7 +1881,7 @@ export default function ThemePremium() {
                   src={selectedDetailMockup.image} 
                   alt={`${selectedDetailMockup.title} detail`}
                   className="w-full max-w-full h-auto object-cover block m-0 p-0"
-                  loading="eager"
+                  loading="lazy"
                   referrerPolicy="no-referrer"
                 />
 
