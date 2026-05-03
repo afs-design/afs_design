@@ -527,7 +527,7 @@ export default function ThemePremium() {
                   </motion.div>
                 </motion.div>
                 
-                <div className="mt-8 text-center w-full">
+                <div className="mt-8 text-center w-full hidden md:block">
                   <h4 className="text-xl font-semibold tracking-tight text-white group-hover:text-indigo-400 transition-colors">{item.title}</h4>
                   <p className="text-sm font-medium mt-1 text-zinc-500 uppercase">{item.category}</p>
                 </div>
@@ -1058,7 +1058,7 @@ export default function ThemePremium() {
                   </motion.div>
                 </motion.div>
                 
-                <div className="mt-8 text-center w-full">
+                <div className="mt-8 text-center w-full hidden md:block">
                   <h4 className="text-xl font-semibold tracking-tight text-white group-hover:text-indigo-400 transition-colors">{item.title}</h4>
                   <p className="text-sm font-medium mt-1 text-zinc-500 uppercase">{item.category}</p>
                 </div>
@@ -1134,7 +1134,7 @@ export default function ThemePremium() {
                   </motion.div>
                 </motion.div>
                 
-                <div className="mt-8 text-center w-full">
+                <div className="mt-8 text-center w-full hidden md:block">
                   <h4 className="text-xl font-semibold tracking-tight text-white group-hover:text-indigo-400 transition-colors">{project.title}</h4>
                   <p className="text-sm font-medium mt-1 text-zinc-500 uppercase">{project.category}</p>
                 </div>
@@ -1208,7 +1208,7 @@ export default function ThemePremium() {
                     </div>
 
                     {/* Dynamic Island / Notch Hint */}
-                    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[32%] h-7 bg-black rounded-full z-40"></div>
+                    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[32%] h-7 bg-black rounded-full z-40 shadow-[0_2px_4px_rgba(0,0,0,0.5)] shadow-[0_2px_4px_rgba(0,0,0,0.5)] shadow-[0_2px_4px_rgba(0,0,0,0.5)]"></div>
                     
                     {/* Foreground image (Fullscreen, no pt-10) */}
                     <div className="relative z-10 w-full h-full">
@@ -1238,7 +1238,7 @@ export default function ThemePremium() {
                 </motion.div>
                 
                 {/* Title Below Mockup */}
-                <div className="mt-8 text-center w-full">
+                <div className="mt-8 text-center w-full hidden md:block">
                   <h4 className="text-xl font-semibold tracking-tight text-white group-hover:text-indigo-400 transition-colors">{project.title}</h4>
                   <p className="text-sm font-medium mt-1 text-zinc-500 uppercase">{project.category}</p>
                 </div>
