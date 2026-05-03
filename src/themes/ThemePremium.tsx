@@ -1799,7 +1799,7 @@ export default function ThemePremium() {
                 layoutId={`phone-screen-${selectedProject.id}`} 
                 className={
                   selectedProject.id === 3
-                    ? "w-full overflow-x-hidden phone-scroll bg-white rounded-[2.5rem] relative flex flex-col h-full overflow-y-auto"
+                    ? "w-full overflow-x-hidden phone-scroll bg-zinc-950 rounded-[2.5rem] relative flex flex-col h-full overflow-y-auto"
                     : "w-full overflow-x-hidden phone-scroll bg-zinc-950 rounded-[2.5rem] relative flex flex-col h-full overflow-y-auto"
                 }
                 style={{ WebkitOverflowScrolling: 'touch', scrollBehavior: 'smooth', touchAction: 'pan-y' }}
@@ -1833,7 +1833,7 @@ export default function ThemePremium() {
                         alt=""
                         className={
                           selectedProject.id === 3
-                            ? "w-full max-w-full block m-0 p-0 object-cover shrink-0 h-auto"
+                            ? "w-full max-w-full block m-0 p-0 object-cover h-auto"
                             : `w-full max-w-full block m-0 p-0 text-transparent bg-transparent object-cover h-auto ${selectedProject.id === 1 ? 'min-h-[50px] bg-white' : ''}`
                         }
                         loading="eager"
