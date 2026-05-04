@@ -1726,7 +1726,7 @@ export default function ThemePremium() {
                 transition={{ repeat: Infinity, duration: 3, ease: "easeInOut", delay: 0.4 }}
                 className="w-[56px] h-[56px] bg-white rounded-xl flex items-center justify-center mb-5 p-2 shadow-lg group-hover:scale-110 transition-transform duration-300"
               >
-                <img src="/digital/digital_04.gif" alt="QR Code fallback" className="w-full h-full object-contain mix-blend-multiply" />
+                <img src="/digital/src="/qr.png.png"" alt="QR Code fallback" className="w-full h-full object-contain mix-blend-multiply" />
               </motion.div>
               <span className="text-[20px] md:text-2xl font-bold text-white mb-2 break-keep">QR 스캔</span>
               <span className="text-[14px] md:text-[16px] text-zinc-400 font-medium break-keep">모바일에서 스캔</span>
