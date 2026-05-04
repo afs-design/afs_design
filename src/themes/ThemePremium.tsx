@@ -1215,7 +1215,7 @@ export default function ThemePremium() {
                       <img 
                         src={project.coverImage} 
                         alt={project.title}
-                        className={`w-full h-full object-fill origin-top transition-transform duration-700 group-hover:scale-105 ${project.id === 1 || project.id === 3 ? 'pt-8' : ''}`}
+                        className={`w-full h-full object-fill origin-top transition-transform duration-700 group-hover:scale-105 ${project.id === 1 ? 'pt-8' : ''}`}
                         referrerPolicy="no-referrer"
                       />
                     </div>
