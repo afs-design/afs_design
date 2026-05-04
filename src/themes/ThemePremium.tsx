@@ -1208,7 +1208,7 @@ export default function ThemePremium() {
                     </div>
 
                     {/* Dynamic Island / Notch Hint */}
-                    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[32%] h-7 bg-black rounded-full z-50 shadow-[0_2px_4px_rgba(0,0,0,0.5)] shadow-[0_2px_4px_rgba(0,0,0,0.5)] shadow-[0_2px_4px_rgba(0,0,0,0.5)]"></div>
+                    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[32%] h-7 bg-zinc-800 rounded-full z-50 shadow-[0_2px_4px_rgba(0,0,0,0.5)] shadow-[0_2px_4px_rgba(0,0,0,0.5)] shadow-[0_2px_4px_rgba(0,0,0,0.5)]"></div>
                     
                     {/* Foreground image (Fullscreen, no pt-10) */}
                     <div className="relative z-10 w-full h-full">
