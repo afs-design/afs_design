@@ -58,7 +58,7 @@ const projects = [
     details: [
       '/digital/digital_02.png',
       '/digital/digital_03.png',
-      '/digital/digital_04.gif',
+      '/qr.png',
       '/digital/digital_05.png',
       '/digital/digital_06.png',
       '/digital/digital_07.png',
